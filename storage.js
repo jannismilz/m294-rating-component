@@ -5,13 +5,22 @@
  * @param {("desc"|"asc")} sortType
  */
 export function getRatings(sort = "publish", sortType = "desc") {
-    const localData = localStorage.getItem("ratings");
+    const localData = JSON.parse(localStorage.getItem("ratings"));
 
     if (!localData) return null;
 
-    // Sort...
-
-    return JSON.parse(localData);
+    switch (sort) {
+        case "publish":
+            return localData.sort((a, b) =>
+                sortType === "desc"
+                    ? b.created_at - a.created_at
+                    : a.created_at - b.created_at
+            );
+        case "rating":
+            return localData.sort((a, b) =>
+                sortType === "desc" ? b.rating - a.rating : a.rating - b.rating
+            );
+    }
 }
 
 /**
@@ -35,8 +44,9 @@ export function storeRating(name, rating, review) {
     if (!localData) {
         return localStorage.setItem("ratings", JSON.stringify([dataObj]));
     }
-    else {
-        localStorage.setItem("ratings", JSON.stringify([...JSON.parse(localData), dataObj]));
-    }
 
+    localStorage.setItem(
+        "ratings",
+        JSON.stringify([...JSON.parse(localData), dataObj])
+    );
 }

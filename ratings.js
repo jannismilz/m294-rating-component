@@ -43,9 +43,12 @@ function removeRatings() {
     Array.from(ratingsContainer.children).forEach((child) => child.remove());
 }
 
-export function renderRatings() {
+export function renderRatings(sort, sortType) {
     removeRatings();
-    const ratings = getRatings();
+    const ratings =
+        sort !== null && sortType !== null
+            ? getRatings(sort, sortType)
+            : getRatings();
 
     if (!ratings || typeof ratings !== "object") {
         return ratingsContainer.appendChild(noRatingsTemplate());
@@ -59,6 +62,6 @@ export function renderRatings() {
 }
 
 // Just for naming and understanding purposes
-export function rerenderRatings() {
-    renderRatings();
+export function rerenderRatings(sort, sortType) {
+    renderRatings(sort, sortType);
 }

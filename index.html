@@ -17,33 +17,70 @@
                 <form id="yourrating">
                     <p>
                         <label for="name">Name</label>
-                        <input type="text" name="name" placeholder="Your name" />
-                        <span id="nameErr"></span>
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Your name"
+                        />
                     </p>
-    
-                    <p>
-                        <label for="rating">Rating</label>
-                        <input type="radio" name="rating" value="1">
-                        <input type="radio" name="rating" value="2">
-                        <input type="radio" name="rating" value="3" checked>
-                        <input type="radio" name="rating" value="4">
-                        <input type="radio" name="rating" value="5">
-                        <span id="ratingErr"></span>
+
+                    <p class="rating">
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="5"
+                            id="star5"
+                        /><label for="star5">☆</label>
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="4"
+                            id="star4"
+                        /><label for="star4">☆</label>
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="3"
+                            id="star3"
+                        /><label for="star3">☆</label>
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="2"
+                            id="star2"
+                        /><label for="star2">☆</label>
+                        <input
+                            type="radio"
+                            name="rating"
+                            value="1"
+                            id="star1"
+                            required
+                            checked
+                        /><label for="star1">☆</label>
                     </p>
-    
+
                     <p>
                         <label for="review">Review</label>
                         <textarea rows="10" cols="40" name="review"></textarea>
-                        <span id="reviewErr"></span>
                     </p>
-    
+
                     <p>
                         <input type="submit" name="submit" value="Submit" />
                         <span id="submitSuccess"></span>
                     </p>
                 </form>
             </div>
-            <div id="ratings" class="outputside"></div>
+            <div class="outputside">
+                <select name="sort" id="ratingsSort">
+                    <option value="publish-desc" selected>Neuste zuerst</option>
+                    <option value="publish-asc">Älteste zuerst</option>
+                    <option value="rating-desc">Beste Bewertung zuerst</option>
+                    <option value="rating-asc">
+                        Schlechtestes Bewertung zuerst
+                    </option>
+                </select>
+                <div id="ratings" class="outputside"></div>
+            </div>
         </main>
     </body>
 </html>

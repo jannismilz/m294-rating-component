@@ -37,5 +37,4 @@ function formInputOnType() {
 }
 
 nameInput.addEventListener("input", formInputOnType);
-ratingInput.addEventListener("input", formInputOnType);
 reviewInput.addEventListener("input", formInputOnType);
