@@ -14,27 +14,13 @@ function handleFormSubmit(el) {
     const ratingInput = document.querySelector("input[name='rating']:checked");
     if (el.preventDefault) el.preventDefault();
 
-    let error = false;
-    if (!nameInput.value) {
-        nameInputErr.innerText = "Dieses Feld muss ausgefüllt werden!";
-        error = true;
-    }
-    if (!ratingInput.value) {
-        ratingInputErr.innerText = "Dieses Feld muss ausgefüllt werden!";
-        error = true;
-    }
-    if (!reviewInput.value) {
-        reviewInputErr.innerText = "Dieses Feld muss ausgefüllt werden!";
-        error = true;
-    }
-
-    if (error) return;
-
     storeRating(nameInput.value, ratingInput.value, reviewInput.value);
 
     // Reset all fields
     nameInput.value = "";
     reviewInput.value = "";
+
+    // Show success message
     submitSuccess.innerText = "Bewertung erfolgreich abgesendet!";
     rerenderRatings();
 }
@@ -45,3 +31,11 @@ if (form.attachEvent) {
     form.addEventListener("submit", handleFormSubmit);
 }
 const ratingInput = document.querySelector("input[name='rating']:checked");
+
+function formInputOnType() {
+    submitSuccess.innerText = "";
+}
+
+nameInput.addEventListener("input", formInputOnType);
+ratingInput.addEventListener("input", formInputOnType);
+reviewInput.addEventListener("input", formInputOnType);
