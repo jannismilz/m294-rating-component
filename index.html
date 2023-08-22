@@ -8,40 +8,42 @@
         <script type="module" src="script.js" defer></script>
     </head>
     <body>
-        <header>
-            <h1>Overrated AG</h1>
-            <p>Rate our product</p>
-        </header>
         <main>
-            <form id="yourrating">
-                <p>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" placeholder="Your name" />
-                    <span id="nameErr"></span>
-                </p>
-
-                <p>
-                    <label for="rating">Rating</label>
-                    <input type="radio" name="rating" value="1">
-                    <input type="radio" name="rating" value="2">
-                    <input type="radio" name="rating" value="3" checked>
-                    <input type="radio" name="rating" value="4">
-                    <input type="radio" name="rating" value="5">
-                    <span id="ratingErr"></span>
-                </p>
-
-                <p>
-                    <label for="review">Review</label>
-                    <textarea rows="10" cols="40" name="review"></textarea>
-                    <span id="reviewErr"></span>
-                </p>
-
-                <p>
-                    <input type="submit" name="submit" value="Absenden" />
-                    <span id="submitSuccess"></span>
-                </p>
-            </form>
-            <div id="ratings"></div>
+            <div class="inputside">
+                <header>
+                    <h1>Overrated AG</h1>
+                    <p>Rate our product</p>
+                </header>
+                <form id="yourrating">
+                    <p>
+                        <label for="name">Name</label>
+                        <input type="text" name="name" placeholder="Your name" />
+                        <span id="nameErr"></span>
+                    </p>
+    
+                    <p>
+                        <label for="rating">Rating</label>
+                        <input type="radio" name="rating" value="1">
+                        <input type="radio" name="rating" value="2">
+                        <input type="radio" name="rating" value="3" checked>
+                        <input type="radio" name="rating" value="4">
+                        <input type="radio" name="rating" value="5">
+                        <span id="ratingErr"></span>
+                    </p>
+    
+                    <p>
+                        <label for="review">Review</label>
+                        <textarea rows="10" cols="40" name="review"></textarea>
+                        <span id="reviewErr"></span>
+                    </p>
+    
+                    <p>
+                        <input type="submit" name="submit" value="Submit" />
+                        <span id="submitSuccess"></span>
+                    </p>
+                </form>
+            </div>
+            <div id="ratings" class="outputside"></div>
         </main>
     </body>
 </html>
