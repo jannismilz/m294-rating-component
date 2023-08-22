@@ -13,20 +13,32 @@
             <p>Rate our product</p>
         </header>
         <main>
-            <form action="" id="yourrating">
+            <form id="yourrating">
                 <p>
                     <label for="name">Name</label>
                     <input type="text" name="name" placeholder="Your name" />
+                    <span id="nameErr"></span>
                 </p>
 
                 <p>
                     <label for="rating">Rating</label>
-                    <input type="text" name="rating" placeholder="Your name" />
+                    <input
+                        type="text"
+                        name="rating"
+                        placeholder="Your rating"
+                    />
+                    <span id="ratingErr"></span>
                 </p>
 
                 <p>
                     <label for="review">Review</label>
                     <textarea rows="10" cols="40" name="review"></textarea>
+                    <span id="reviewErr"></span>
+                </p>
+
+                <p>
+                    <input type="submit" name="submit" value="Absenden" />
+                    <span id="submitSuccess"></span>
                 </p>
             </form>
             <div id="ratings"></div>
