@@ -1,16 +1,16 @@
 import { storeRating } from "./storage.js";
 
 const form = document.getElementById("yourrating");
-const nameInput = document.querySelector("#yourrating [name='name']");
+const nameInput = document.querySelector("input[name='name']");
 const nameInputErr = document.querySelector("#nameErr");
-const ratingInput = document.querySelector("#yourrating [name='rating']");
 const ratingInputErr = document.querySelector("#ratingErr");
-const reviewInput = document.querySelector("#yourrating [name='review']");
+const reviewInput = document.querySelector("textarea[name='review']");
 const reviewInputErr = document.querySelector("#reviewErr");
-const submitBtn = document.querySelector("#yourrating [name='submit']");
+const submitBtn = document.querySelector("input[name='submit']");
 const submitSuccess = document.querySelector("#submitSuccess");
 
 function handleFormSubmit(el) {
+    const ratingInput = document.querySelector("input[name='rating']:checked");
     if (el.preventDefault) el.preventDefault();
 
     let error = false;
@@ -33,7 +33,6 @@ function handleFormSubmit(el) {
 
     // Reset all fields
     nameInput.value = "";
-    ratingInput.value = "";
     reviewInput.value = "";
     submitSuccess.innerText = "Bewertung erfolgreich abgesendet!";
 }
@@ -43,3 +42,4 @@ if (form.attachEvent) {
 } else {
     form.addEventListener("submit", handleFormSubmit);
 }
+const ratingInput = document.querySelector("input[name='rating']:checked");
