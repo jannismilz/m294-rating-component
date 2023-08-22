@@ -11,7 +11,7 @@ export function getRatings(sort = "publish", sortType = "desc") {
 
     // Sort...
 
-    return localData;
+    return JSON.parse(localData);
 }
 
 /**
@@ -33,7 +33,7 @@ export function storeRating(name, rating, review) {
     const localData = localStorage.getItem("ratings");
 
     if (!localData) {
-        localStorage.setItem("ratings", JSON.stringify([dataObj]));
+        return localStorage.setItem("ratings", JSON.stringify([dataObj]));
     }
     else {
         localStorage.setItem("ratings", JSON.stringify([...JSON.parse(localData), dataObj]));

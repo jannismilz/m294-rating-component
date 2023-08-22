@@ -1,3 +1,4 @@
+import { rerenderRatings } from "./ratings.js";
 import { storeRating } from "./storage.js";
 
 const form = document.getElementById("yourrating");
@@ -35,6 +36,7 @@ function handleFormSubmit(el) {
     nameInput.value = "";
     reviewInput.value = "";
     submitSuccess.innerText = "Bewertung erfolgreich abgesendet!";
+    rerenderRatings();
 }
 
 if (form.attachEvent) {
