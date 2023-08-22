@@ -22,6 +22,7 @@ export function getRatings(sort = "publish", sortType = "desc") {
  * @param {string} review
  */
 export function storeRating(name, rating, review) {
+    console.log(name, rating, review);
     const dataObj = {
         name,
         rating,
@@ -34,9 +35,8 @@ export function storeRating(name, rating, review) {
     if (!localData) {
         localStorage.setItem("ratings", JSON.stringify([dataObj]));
     }
+    else {
+        localStorage.setItem("ratings", JSON.stringify([...JSON.parse(localData), dataObj]));
+    }
 
-    localStorage.setItem(
-        "ratings",
-        JSON.stringify([...JSON.parse(localData), dataObj])
-    );
 }
