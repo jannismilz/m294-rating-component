@@ -2,6 +2,7 @@ import { getRatings, storeRating } from "./storage.js";
 import "./form.js";
 import "./ratings.js";
 import { renderRatings } from "./ratings.js";
+import "./sort.js";
 
 renderRatings();
 
