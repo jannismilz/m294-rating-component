@@ -49,6 +49,14 @@ form p {
     top: 0;
 }
 
+select[name='sort'] {
+    border: none;
+    width: 12rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    background: #eae9e9;
+}
+
 input[name="name"],
 textarea {
     resize: none;
@@ -109,7 +117,9 @@ input[name="submit"] {
     font-size: small;
     padding: 0.5rem;
 }
-
+.ratingList > li {
+    margin-bottom: 1rem;
+}
 /* 
     Rating stars styles
 */
