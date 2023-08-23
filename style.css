@@ -49,6 +49,17 @@ form p {
     top: 0;
 }
 
+.yourrating {
+    opacity: 0;
+    transition: 1s;
+    transform: translateX(-200px);
+}
+
+.yourrating-animated {
+    opacity: 1;
+    transform: none;
+}
+
 select[name="sort"] {
     border: none;
     width: 12rem;
@@ -107,7 +118,16 @@ input[name="submit"] {
     list-style: none;
     border: 3px solid #eae9e9;
     border-radius: 0.25rem;
+    opacity: 0;
+    transition: 1s;
+    transform: translateX(200px);
 }
+
+.ratingWrapper-animated {
+    opacity: 1;
+    transform: none;
+}
+
 .ratingNameRating {
     display: flex;
     flex-direction: column;

@@ -1,4 +1,5 @@
 import { getRatings } from "./storage.js";
+import { runRatingTransition } from "./transition.js";
 
 const ratingsContainer = document.getElementById("ratings");
 
@@ -76,6 +77,8 @@ export function renderRatings(sort, sortType) {
             ratingTemplate(rating.name, rating.rating, rating.review)
         );
     });
+
+    runRatingTransition();
 }
 
 // Just for naming and understanding purposes

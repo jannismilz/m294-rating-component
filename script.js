@@ -3,6 +3,7 @@ import "./form.js";
 import "./ratings.js";
 import { renderRatings } from "./ratings.js";
 import "./sort.js";
+import "./transition.js";
 
 renderRatings();
 
