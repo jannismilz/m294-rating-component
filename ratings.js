@@ -21,13 +21,27 @@ const ratingTemplate = (name, rating, review) => {
     nameNode.classList.add("ratingName");
     nameNode.innerText = name;
 
-    const ratingNode = document.createElement("span");
+    const ratingNode = document.createElement("form");
     ratingNode.classList.add("ratingRating");
-    ratingNode.innerText = rating;
 
     const reviewNode = document.createElement("p");
     reviewNode.classList.add("ratingReview");
     reviewNode.innerText = review;
+
+    for (let i = 5; i >= 1; i--) {
+        const starNode = document.createElement("input");
+        starNode.type = "radio";
+        starNode.name = "rating";
+        starNode.id = `star${i}`;
+        if (i === parseInt(rating)) starNode.checked = true;
+
+        const starLabelNode = document.createElement("label");
+        starLabelNode.for = `star${i}`;
+        starLabelNode.innerText = "☆";
+
+        ratingNode.appendChild(starNode);
+        ratingNode.appendChild(starLabelNode);
+    }
 
     // Append all elements together
     nameRatingNode.appendChild(nameNode);

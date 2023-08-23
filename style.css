@@ -42,14 +42,14 @@ form p {
     background: #fff;
     box-shadow: 0px 0px 60px 0px rgba(150, 150, 150, 0.25);
     width: 50%;
-    padding: 3.5rem 3rem;
+    padding: 3rem 3rem;
     height: 100%;
     position: -webkit-sticky; /* Safari */
     position: sticky;
     top: 0;
 }
 
-select[name='sort'] {
+select[name="sort"] {
     border: none;
     width: 12rem;
     padding: 0.75rem;
@@ -85,6 +85,10 @@ input[name="submit"] {
     margin-top: 2rem;
 }
 
+#submitSuccess {
+    margin-top: 1rem;
+}
+
 .outputside {
     padding: 3.5rem 3rem;
     background: #fff;
@@ -99,7 +103,7 @@ input[name="submit"] {
  * Rating box
  */
 .ratingWrapper {
-    padding: 0.7rem 1.5rem;
+    padding: 1rem;
     list-style: none;
     border: 3px solid #eae9e9;
     border-radius: 0.25rem;
@@ -110,18 +114,50 @@ input[name="submit"] {
 }
 .ratingName {
     color: #4a4a4a;
-    font-size: smaller;
-    margin: 0.25rem;
+    font-size: medium;
+    font-weight: bold;
 }
+/* 
+    Rating stars styles
+*/
+.ratingRating {
+    display: flex;
+    flex-direction: row-reverse !important;
+    justify-content: start;
+    width: min-content;
+    gap: 0;
+}
+
+.ratingRating > input {
+    display: none;
+}
+
+.ratingRating > label {
+    position: relative;
+    width: 1rem;
+    font-size: 1rem;
+    color: var(--color-yellow);
+    margin-left: -1px;
+}
+
+.ratingRating > label::before {
+    content: "\2605";
+    position: absolute;
+    opacity: 0;
+}
+.ratingRating > input:checked ~ label:before {
+    opacity: 1;
+}
+
 .ratingReview {
     font-size: small;
-    padding: 0.5rem;
+    margin-top: 0.75rem;
 }
 .ratingList > li {
     margin-bottom: 1rem;
 }
 /* 
-    Rating stars styles
+    Rating stars styles in form
 */
 .rating {
     display: flex;
