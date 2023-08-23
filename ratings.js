@@ -24,10 +24,6 @@ const ratingTemplate = (name, rating, review) => {
     const ratingNode = document.createElement("form");
     ratingNode.classList.add("ratingRating");
 
-    const reviewNode = document.createElement("p");
-    reviewNode.classList.add("ratingReview");
-    reviewNode.innerText = review;
-
     for (let i = 5; i >= 1; i--) {
         const starNode = document.createElement("input");
         starNode.type = "radio";
@@ -48,7 +44,14 @@ const ratingTemplate = (name, rating, review) => {
     nameRatingNode.appendChild(ratingNode);
 
     wrapperNode.appendChild(nameRatingNode);
-    wrapperNode.appendChild(reviewNode);
+
+    if (review) {
+        const reviewNode = document.createElement("p");
+        reviewNode.classList.add("ratingReview");
+        reviewNode.innerText = review;
+
+        wrapperNode.appendChild(reviewNode);
+    }
 
     return wrapperNode;
 };
